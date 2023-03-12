@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Idea files
+.idea/
+
+# NDA files
+*.strip_set
+*.json
