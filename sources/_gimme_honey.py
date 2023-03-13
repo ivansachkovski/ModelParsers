@@ -21,7 +21,19 @@ game_settings_model = {
     "normal_bet": {
         "game_modes_odds": {
             "values": [0, 1, 2, 3],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 'C', 29)
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 'C29', 'G29')
+        },
+        "paid_spins": {
+            "reels_odds": {
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 'C46', 'F46'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 'C47', 'F47'),
+            }
+        },
+        "free_spins": {
+            "reels_odds": {
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 'C57', 'F57'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 'C58', 'F58'),
+            }
         }
     },
     "bonus_buy_x75": {
@@ -36,7 +48,10 @@ parser_base.init('ngs_gimme_honey', '200993')
 
 parser_base.create_game_settings_file(game_settings_model)
 
-parser_base.create_strip_file('0_normal_paid.strip_set', strips_sheet, ['C', 'D', 'E', 'F', 'G'], 18)
-parser_base.create_strip_file('1_normal_wild_mult.strip_set', strips_sheet, ['K', 'L', 'M', 'N', 'O'], 18)
-parser_base.create_strip_file('2_normal_wild_reels.strip_set', strips_sheet, ['S', 'T', 'U', 'V', 'W'], 18)
-parser_base.create_strip_file('3_side_bet_paid.strip_set', strips_sheet, ['AA', 'AB', 'AC', 'AD', 'AE'], 18)
+parser_base.create_strip_file('0_paid_spins.strip_set', strips_sheet, ['C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+                                                                       'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+                                                                       'W', 'X', 'Y', 'Z'], 3, 142)
+parser_base.create_strip_file('1_free_spins.strip_set', strips_sheet, ['AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ', 'AK',
+                                                                       'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS',
+                                                                       'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ', 'BA'],
+                              3, 142)
