@@ -11,7 +11,7 @@ def init(game_name: str, skin_id: str):
     global output_dir
     if os.name == 'posix':
         # save files to the game folder
-        output_dir = '/home/ivan/sources/{}}/resources/config/{}'.format(game_name, skin_id)
+        output_dir = '/home/ivan/sources/{}/resources/config/{}'.format(game_name, skin_id)
     else:
         # save files to tmp folder
         output_dir = skin_id
@@ -41,13 +41,13 @@ def create_game_settings_file(model: dict):
         print(json.dumps(model, indent=4), file=f)
 
 
-def create_strip_file(file_name: str, sheet, col_names: list, start_row_index: int):
+def create_strip_file(file_name: str, sheet, col_names: list, start_row_index: int, end_row_index=None):
     """
     Generate strip `file_name` using input parameters.
     """
     path = prepare_out_directory_for_file(file_name)
     with open(path, 'w') as f:
-        strip = utils_array.get_complex_array_vertical(sheet, col_names, start_row_index, '\t')
+        strip = utils_array.get_complex_array_vertical(sheet, col_names, start_row_index, end_row_index, '\t')
         for row in strip:
             if row != '':
                 print(row, file=f)
