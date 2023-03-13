@@ -64,5 +64,9 @@ def get_complex_array_vertical(sheet, col_names: list, start_row_index: int, end
     return out_array
 
 
-def get_array_horizontal(sheet, range_begin: str, range_end: str):
+def get_array_horizontal(sheet, row: int, col_name_begin: str, col_name_end: str):
+
+    range_begin = col_name_begin + str(row)
+    range_end = col_name_end + str(row)
+
     return [item.value for item in sheet[range_begin:range_end][0]]
