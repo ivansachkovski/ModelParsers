@@ -1,8 +1,7 @@
 import json
 import os
 
-from base import array_utils
-
+import utils_array
 
 # Folder that will contain generated files
 output_dir = ''
@@ -48,7 +47,7 @@ def create_strip_file(file_name: str, sheet, col_names: list, start_row_index: i
     """
     path = prepare_out_directory_for_file(file_name)
     with open(path, 'w') as f:
-        strip = array_utils.get_complex_array_vertical(sheet, col_names, start_row_index, '\t')
+        strip = utils_array.get_complex_array_vertical(sheet, col_names, start_row_index, '\t')
         for row in strip:
             if row != '':
                 print(row, file=f)
