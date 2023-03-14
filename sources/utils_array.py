@@ -1,7 +1,10 @@
 import utils_transform
 
 
-def get_array_vertical(sheet, col_name: str, start_row_index: int, transform_func=utils_transform.transform_none):
+def get_array_vertical(sheet,
+                       col_name: str,
+                       start_row_index: int,
+                       transform_func=utils_transform.transform_none):
     """
     Get as array column `col_name` from `sheet` starting from `start_index_row`.
     Apply `transform_func` to each element.
@@ -25,7 +28,12 @@ def get_array_vertical(sheet, col_name: str, start_row_index: int, transform_fun
     return out_array
 
 
-def get_complex_array_vertical(sheet, col_names: list, start_row_index: int, end_row_index=None, separator='|'):
+def get_complex_array_vertical(sheet,
+                               col_names: list,
+                               start_row_index: int,
+                               end_row_index=None,
+                               separator='|',
+                               transform_func=utils_transform.transform_none):
     """
     Get as array joined (via `separator`) columns belongs to `col_names` from `sheet` starting from `start_index_row`.
     """
@@ -59,7 +67,7 @@ def get_complex_array_vertical(sheet, col_names: list, start_row_index: int, end
             if out_array[output_index] != '':
                 out_array[output_index] += separator
 
-            out_array[output_index] += str(cell.value)
+            out_array[output_index] += str(transform_func(cell.value))
 
     return out_array
 
