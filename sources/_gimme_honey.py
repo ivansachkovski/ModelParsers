@@ -2,6 +2,7 @@ import openpyxl
 
 import utils_array
 import parser_base
+import utils_transform
 
 model_path = '../../../math_models/GimmeHoney_11_06.03.2023.xlsx'
 
@@ -19,11 +20,11 @@ game_settings_model = {
     "common": {
     },
     "normal_bet": {
-        "game_modes_odds": {
-            "values": [0, 1, 2, 3],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 29, 'C', 'G'),
-        },
         "paid_spins": {
+            "game_modes_odds": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 29, 'C', 'G'),
+            },
             "reels_odds": {
                 "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'C', 'F'),
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'C', 'F'),
@@ -46,7 +47,7 @@ game_settings_model = {
                     "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'I', 'L'),
                 }
             ],
-            "reels_heights_odds": [
+            "reels_sizes_odds": [
                 {
                     "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
                     "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'Q', 'V'),
@@ -74,10 +75,40 @@ game_settings_model = {
             ]
         },
         "free_spins": {
+            "game_modes_odds": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 30, 'C', 'G'),
+            },
             "reels_odds": {
                 "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'C', 'F'),
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'C', 'F'),
-            }
+            },
+            "reels_sizes_odds": [
+                {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'Q', 'V'),
+                },
+                {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'Q', 'V'),
+                },
+                {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'Q', 'V'),
+                },
+                {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'Q', 'V'),
+                },
+                {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 62, 'Q', 'V'),
+                },
+                {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 63, 'Q', 'V'),
+                }
+            ]
         }
     },
     "bonus_buy_x75": {
@@ -88,13 +119,17 @@ game_settings_model = {
     "win_cap_total_bet_mult": 5000
 }
 
-parser_base.init('ngs_gimme_honey', '200993')
+parser_base.init('ngs_gimme_the_honey', '200993')
 
 parser_base.create_game_settings_file(game_settings_model)
 
 parser_base.create_strip_file('0_paid_spins.strip_set', strips_sheet,
                               ['C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-                               'U', 'V', 'W', 'X', 'Y', 'Z'], 3, 142)
+                               'U', 'V', 'W', 'X', 'Y', 'Z'],
+                              3, 142,
+                              utils_transform.transform_inc)
 parser_base.create_strip_file('1_free_spins.strip_set', strips_sheet,
                               ['AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR',
-                               'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ', 'BA'], 3, 142)
+                               'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ', 'BA'],
+                              3, 142,
+                              utils_transform.transform_inc)
