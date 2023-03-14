@@ -4,7 +4,7 @@ import utils_array
 import utils_transform
 import parser_base
 
-model_path = '../../../math_models/Server_Barnyard_Bucks_v1.1.xlsx'
+model_path = '../../../math_models/Server_HenHeist_v1.2.xlsx'
 
 wb = openpyxl.load_workbook(model_path, data_only=True)
 
