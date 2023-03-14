@@ -4,11 +4,13 @@ import utils_transform
 def get_array_vertical(sheet,
                        col_name: str,
                        start_row_index: int,
-                       transform_func=utils_transform.transform_none):
+                       transform_func=None):
     """
     Get as array column `col_name` from `sheet` starting from `start_index_row`.
     Apply `transform_func` to each element.
     """
+    transform_func = utils_transform.transform_none if transform_func is None else transform_func
+
     out_array = []
     column = sheet[col_name]
 
@@ -33,10 +35,12 @@ def get_complex_array_vertical(sheet,
                                start_row_index: int,
                                end_row_index=None,
                                separator='|',
-                               transform_func=utils_transform.transform_none):
+                               transform_func=None):
     """
     Get as array joined (via `separator`) columns belongs to `col_names` from `sheet` starting from `start_index_row`.
     """
+    transform_func = utils_transform.transform_none if transform_func is None else transform_func
+
     out_array = []
 
     for col_name in col_names:
