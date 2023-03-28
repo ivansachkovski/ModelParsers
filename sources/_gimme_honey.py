@@ -27,88 +27,166 @@ game_settings_model = {
                 "values": [0, 1, 2, 3, 4],
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 29, 'C', 'G'),
             },
-            "reels_odds": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'C', 'F'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'C', 'F'),
+            "basic": {
+                "reels_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'C', 'F'),
+                },
+                "tracker_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'I', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'I', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 49, 'I', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'I', 'L'),
+                    }
+                ],
+                "reels_size_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 49, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 51, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 52, 'Q', 'V'),
+                    }
+                ]
             },
-            "tracker_odds": [
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'I', 'L'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'I', 'L'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 49, 'I', 'L'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'I', 'L'),
-                }
-            ],
-            "reels_size_odds": [
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'Q', 'V'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'Q', 'V'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 49, 'Q', 'V'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'Q', 'V'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 51, 'Q', 'V'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 52, 'Q', 'V'),
-                }
-            ]
+            "mystery": {
+                "reels_size_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 89, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 90, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 91, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'C', 'H'),
+                    }
+                ]
+            }
         },
         "free_spins": {
             "game_modes_odds": {
                 "values": [0, 1, 2, 3, 4],
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 30, 'C', 'G'),
             },
-            "reels_odds": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'C', 'F'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'C', 'F'),
-            },
+            "basic": {
+                "reels_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'C', 'F'),
+                },
+                "tracker_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'I', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'I', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'I', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'I', 'L'),
+                    }
+                ],
+                "reels_size_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 62, 'Q', 'V'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 63, 'Q', 'V'),
+                    }
+                ]
+            }
+        },
+        "mystery": {
             "reels_size_odds": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 89, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 90, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 91, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 62, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 63, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'L', 'Q'),
                 }
             ]
         }
