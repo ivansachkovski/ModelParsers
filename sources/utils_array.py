@@ -43,23 +43,20 @@ def get_complex_array_vertical(sheet,
 
         for cell in column:
             index += 1
+            # Process only cells with values
+            if cell.value is not None:
+                if out_array[index] != '':
+                    out_array[index] += separator
+                out_array[index] += str(transform_func(cell.value))
 
-            # Do not process cells without values
-            if cell.value is None:
-                continue
-
-            if out_array[index] != '':
-                out_array[index] += separator
-
-            out_array[index] += str(transform_func(cell.value))
-
-    return out_array
+    return [value for value in out_array if value != '']
 
 
 def get_array_horizontal(sheet,
                          row: int,
                          col_name_begin: str,
                          col_name_end: str):
+
     range_begin = col_name_begin + str(row)
     range_end = col_name_end + str(row)
 
