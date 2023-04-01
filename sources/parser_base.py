@@ -54,10 +54,8 @@ def create_strip_file(file_name: str,
     """
     path = prepare_out_directory_for_file(file_name)
     with open(path, 'w') as f:
-
         strip = utils_array.get_complex_array_vertical(sheet, col_names, start_row_index, end_row_index,
                                                        '\t', transform_func)
 
         for row in strip:
-            if row != '':
-                print(row, file=f)
+            print(row, file=f)
