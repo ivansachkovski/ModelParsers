@@ -240,37 +240,37 @@ parser_base.create_strip_file('6_free_queen_wild.strip_set', strips_sheet,
                               3, 142,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('0_paid.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('0_paid.tracker', strips_sheet,
                               ['C', 'D', 'E', 'F', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('1_free.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('1_free.tracker', strips_sheet,
                               ['AD', 'AE', 'AF', 'AG', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('2_paid_second_chance.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('2_paid_second_chance.tracker', strips_sheet,
                               ['BF', 'BG', 'A', 'A', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('3_free_second_chance.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('3_free_second_chance.tracker', strips_sheet,
                               ['BU', 'BV', 'A', 'A', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('4_mystery.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('4_mystery.tracker', strips_sheet,
                               ['CK', 'CL', 'A', 'A', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('5_paid_queen_wild.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('5_paid_queen_wild.tracker', strips_sheet,
                               ['DA', 'DB', 'A', 'A', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)
 
-parser_base.create_strip_file('6_free_queen_wild.bottom_tracker', strips_sheet,
+parser_base.create_strip_file('6_free_queen_wild.tracker', strips_sheet,
                               ['DP', 'DQ', 'A', 'A', 'A', 'A'],
                               147, 266,
                               utils_transform.transform_inc)

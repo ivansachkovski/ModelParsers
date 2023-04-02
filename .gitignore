@@ -133,5 +133,5 @@ dmypy.json
 
 # NDA files
 *.strip_set
-*.bottom_tracker
+*.tracker
 *.json
