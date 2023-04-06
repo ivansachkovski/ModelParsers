@@ -22,7 +22,7 @@ game_settings_model = {
         "scatters_to_fs": [0, 0, 0, 6, 8, 10, 12]
     },
     "normal_bet": {
-        "paid_spins": {
+        "paid": {
             "game_modes_odds": {
                 "values": [0, 1, 2, 3, 4],
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 29, 'C', 'G'),
@@ -78,6 +78,18 @@ game_settings_model = {
                 ]
             },
             "mystery": {
+                "symbol_odds": {
+                    "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 100, 'C', 'L')
+                },
+                "num_reels_odds": {
+                    "values": [3, 4, 5, 6],
+                    "weights": [10, 30, 28, 0]
+                },
+                "can_lose_odds": {
+                    "values": [1, 0],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'D')
+                },
                 "reels_size_odds": [
                     {
                         "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
@@ -106,7 +118,7 @@ game_settings_model = {
                 ]
             }
         },
-        "free_spins": {
+        "free": {
             "game_modes_odds": {
                 "values": [0, 1, 2, 3, 4],
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 30, 'C', 'G'),
@@ -160,35 +172,47 @@ game_settings_model = {
                         "weights": utils_array.get_array_horizontal(game_settings_sheet, 63, 'Q', 'V'),
                     }
                 ]
+            },
+            "mystery": {
+                "symbol_odds": {
+                    "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 101, 'C', 'L')
+                },
+                "num_reels_odds": {
+                    "values": [3, 4, 5, 6],
+                    "weights": [40, 4, 0, 0]
+                },
+                "can_lose_odds": {
+                    "values": [1, 0],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'M')
+                },
+                "reels_size_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 89, 'L', 'Q'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 90, 'L', 'Q'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 91, 'L', 'Q'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'L', 'Q'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'L', 'Q'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'L', 'Q'),
+                    }
+                ]
             }
-        },
-        "mystery": {
-            "reels_size_odds": [
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 89, 'L', 'Q'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 90, 'L', 'Q'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 91, 'L', 'Q'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'L', 'Q'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'L', 'Q'),
-                },
-                {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'L', 'Q'),
-                }
-            ]
         }
     },
     "bonus_buy_x75": {
