@@ -19,7 +19,12 @@ game_settings_model = {
     },
     "common": {
         "max_reels_size": [7, 6, 6, 6, 6, 7],
-        "scatters_to_fs": [0, 0, 0, 6, 8, 10, 12]
+        "max_megaways_odds": {
+            "values": [0, 1],
+            "weights": [95, 5]
+        },
+        "scatters_to_fs": [0, 0, 0, 6, 8, 10, 12],
+        "mystery_initial_reels_odds": [0, 50, 10, 10, 30, 30]
     },
     "normal_bet": {
         "paid": {
@@ -116,7 +121,65 @@ game_settings_model = {
                         "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'C', 'H'),
                     }
                 ]
-            }
+            },
+            "queen_wild": {
+                "reels_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 137, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 138, 'C', 'D'),
+                },
+                "tracker_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 137, 'K', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 138, 'K', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 137, 'K', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 139, 'K', 'L'),
+                    },
+                ],
+                "reels_size_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 143, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 144, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 145, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 146, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 147, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 148, 'C', 'H'),
+                    }
+                ],
+                "place_gh_odds": {
+                    "values": [1, 0],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 125, 'C', 'D')
+                },
+                "gh_positions_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 124, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 125, 'I', 'L')
+                },
+                "gh_limit_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 129, 'C', 'E'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 130, 'C', 'E')
+                },
+                "qw_heights_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 129, 'K', 'P'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 130, 'K', 'P')
+                }
+            },
         },
         "free": {
             "game_modes_odds": {
@@ -212,6 +275,64 @@ game_settings_model = {
                         "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'L', 'Q'),
                     }
                 ]
+            },
+            "queen_wild": {
+                "reels_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'C', 'D'),
+                },
+                "tracker_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'K', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'K', 'L'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'K', 'L'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'K', 'L'),
+                    },
+                ],
+                "reels_size_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 174, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 175, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 176, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 177, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 178, 'C', 'H'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 179, 'C', 'H'),
+                    }
+                ],
+                "place_gh_odds": {
+                    "values": [1, 0],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 156, 'C', 'D')
+                },
+                "gh_positions_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 155, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 156, 'I', 'L')
+                },
+                "gh_limit_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 160, 'C', 'E'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 161, 'C', 'E')
+                },
+                "qw_heights_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 160, 'K', 'P'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 161, 'K', 'P')
+                }
             }
         }
     },
