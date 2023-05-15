@@ -32,6 +32,10 @@ game_settings_model = {
                 "values": [0, 1, 2, 3, 4],
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 29, 'C', 'G'),
             },
+            "game_modes_max_odds": {
+                "values": [3, 1, 2, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 37, 'C', 'F'),
+            },
             "basic": {
                 "reels_odds": {
                     "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'C', 'F'),
@@ -82,6 +86,22 @@ game_settings_model = {
                     }
                 ]
             },
+            "wild_scatter": {
+                "reels_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 70, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 71, 'C', 'D'),
+                },
+                "tracker_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 70, 'J', 'K'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 71, 'J', 'K'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 70, 'J', 'K'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 72, 'J', 'K'),
+                    }
+                ],
+            },
             "mystery": {
                 "symbol_odds": {
                     "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -121,6 +141,12 @@ game_settings_model = {
                         "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'C', 'H'),
                     }
                 ]
+            },
+            "max_megaways": {
+                "can_lose_odds": {
+                    "values": [1, 0],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 114, 'C', 'D')
+                }
             },
             "queen_wild": {
                 "reels_odds": {
@@ -186,6 +212,22 @@ game_settings_model = {
                 "values": [0, 1, 2, 3, 4],
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 30, 'C', 'G'),
             },
+            "game_modes_special_odds": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 31, 'C', 'G'),
+            },
+            "game_modes_max_odds": {
+                "values": [3, 1, 2, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 38, 'C', 'F'),
+            },
+            "game_modes_special_max_odds": {
+                "values": [3, 1, 2, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 39, 'C', 'F'),
+            },
+            "fs_special_odds": {
+                "values": [1, 0],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 211, 'C', 'D'),
+            },
             "basic": {
                 "reels_odds": {
                     "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'C', 'F'),
@@ -236,6 +278,22 @@ game_settings_model = {
                     }
                 ]
             },
+            "wild_scatter": {
+                "reels_odds": {
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 78, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 79, 'C', 'D'),
+                },
+                "tracker_odds": [
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 78, 'J', 'K'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 79, 'J', 'K'),
+                    },
+                    {
+                        "values": utils_array.get_array_horizontal(game_settings_sheet, 78, 'J', 'K'),
+                        "weights": utils_array.get_array_horizontal(game_settings_sheet, 80, 'J', 'K'),
+                    }
+                ],
+            },
             "mystery": {
                 "symbol_odds": {
                     "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -275,6 +333,12 @@ game_settings_model = {
                         "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'L', 'Q'),
                     }
                 ]
+            },
+            "max_megaways": {
+                "can_lose_odds": {
+                    "values": [1, 0],
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 115, 'C', 'D')
+                }
             },
             "queen_wild": {
                 "reels_odds": {
