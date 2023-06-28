@@ -59,3 +59,10 @@ def create_strip_file(file_name: str,
 
         for row in strip:
             print(row, file=f)
+
+
+def create_file(file_name: str, data: list):
+    path = prepare_out_directory_for_file(file_name)
+    with open(path, 'w') as f:
+        for row in data:
+            print(row, file=f)
