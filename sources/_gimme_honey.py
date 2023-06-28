@@ -4,7 +4,7 @@ import utils_array
 import parser_base
 import utils_transform
 
-model_path = '../../../math_models/GimmeHoney_11_06.03.2023.xlsx'
+model_path = '../../../math_models/GimmeHoney_41_14.06.2023.xlsx'
 
 wb = openpyxl.load_workbook(model_path, data_only=True)
 
@@ -23,7 +23,7 @@ game_settings_model = {
 
         "fs_special": {
             "values": [1, 0],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 211, 'C', 'D'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 236, 'C', 'D'),
         },
 
         "fs_special_qw_params": {
@@ -35,18 +35,18 @@ game_settings_model = {
             "interval": {
                 "free": 3,
                 "bonus_buy_1": 3,
-                "bonus_buy_2": 4,
+                "bonus_buy_2": 3,
             }
         },
 
         "num_scatters": {
             "bonus_buy_1": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 229, 'H', 'K'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 230, 'H', 'K'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 249, 'H', 'K'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 250, 'H', 'K'),
             },
             "bonus_buy_2": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 229, 'H', 'K'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 231, 'H', 'K'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 249, 'H', 'K'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 251, 'H', 'K'),
             },
         },
     },
@@ -66,183 +66,202 @@ game_settings_model = {
         },
         "bonus_buy_1": {
             "values": [0, 1, 2, 3, 4],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 236, 'C', 'G'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 256, 'C', 'G'),
         },
         "bonus_buy_2": {
             "values": [0, 1, 2, 3, 4],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 237, 'C', 'G'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 257, 'C', 'G'),
         },
     },
 
-    "game_modes_max_mw": {
+    "game_modes_max_mw_1": {
         "paid": {
-            "values": [3, 1, 2, 4],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 37, 'C', 'F'),
-        },
-        "free": {
             "values": [3, 1, 2, 4],
             "weights": utils_array.get_array_horizontal(game_settings_sheet, 38, 'C', 'F'),
         },
-        "free_special": {
+        "free": {
             "values": [3, 1, 2, 4],
             "weights": utils_array.get_array_horizontal(game_settings_sheet, 39, 'C', 'F'),
         },
+        "free_special": {
+            "values": [3, 1, 2, 4],
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 40, 'C', 'F'),
+        },
         "bonus_buy_1": {
             "values": [3, 1, 2, 4],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 243, 'C', 'F'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 264, 'C', 'F'),
         },
         "bonus_buy_2": {
             "values": [3, 1, 2, 4],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 244, 'C', 'F'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 265, 'C', 'F'),
+        }
+    },
+
+    "game_modes_max_mw_2": {
+        "free": {
+            "values": [3, 1, 2, 4],
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'C', 'F'),
+        },
+        "free_special": {
+            "values": [3, 1, 2, 4],
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'C', 'F'),
+        },
+        "bonus_buy_1": {
+            "values": [3, 1, 2, 4],
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 272, 'C', 'F'),
+        },
+        "bonus_buy_2": {
+            "values": [3, 1, 2, 4],
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 273, 'C', 'F'),
         }
     },
 
     "basic": {
         "paid": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'C', 'F'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'C', 'F'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'C', 'F'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 56, 'C', 'F'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 56, 'I', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 49, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'I', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'I', 'L'),
                 }
             ],
             "reels_size": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 47, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 56, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 48, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 49, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 50, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 51, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 46, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 52, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 55, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'Q', 'V'),
                 }
             ]
         },
         "free": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'C', 'F'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'C', 'F'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'C', 'F'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 67, 'C', 'F'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 67, 'I', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 68, 'I', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 69, 'I', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'I', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'I', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'I', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 70, 'I', 'L'),
                 }
             ],
             "reels_size": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 58, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 67, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 59, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 68, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 60, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 69, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 61, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 70, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 62, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 71, 'Q', 'V'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 57, 'Q', 'V'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 63, 'Q', 'V'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 66, 'Q', 'V'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 72, 'Q', 'V'),
                 }
             ]
         },
         "bonus_buy_1": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 248, 'C', 'F'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 249, 'C', 'F'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 277, 'C', 'F'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 278, 'C', 'F'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 254, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 255, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 283, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 284, 'C', 'F'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 254, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 256, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 283, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 285, 'C', 'F'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 254, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 257, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 283, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 286, 'C', 'F'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 254, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 258, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 283, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 287, 'C', 'F'),
                 }
             ],
         },
         "bonus_buy_2": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 248, 'C', 'F'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 250, 'C', 'F'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 277, 'C', 'F'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 279, 'C', 'F'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 260, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 261, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 289, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 290, 'C', 'F'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 260, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 262, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 289, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 291, 'C', 'F'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 260, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 263, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 289, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 292, 'C', 'F'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 260, 'C', 'F'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 264, 'C', 'F'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 289, 'C', 'F'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 293, 'C', 'F'),
                 }
             ],
         }
@@ -251,110 +270,121 @@ game_settings_model = {
     "wild_scatter": {
         "paid": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 70, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 71, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 79, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 80, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 70, 'J', 'K'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 71, 'J', 'K'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 79, 'J', 'K'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 80, 'J', 'K'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 70, 'J', 'K'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 72, 'J', 'K'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 79, 'J', 'K'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 81, 'J', 'K'),
                 }
             ],
+            "skip": {
+                "values": [0, 1],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 85, 'C', 'D'),
+            }
         },
         "free": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 78, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 79, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 91, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 78, 'J', 'K'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 79, 'J', 'K'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 91, 'J', 'K'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'J', 'K'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 78, 'J', 'K'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 80, 'J', 'K'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 91, 'J', 'K'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'J', 'K'),
                 }
             ],
+            "skip": {
+                "values": [0, 1],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 97, 'C', 'D'),
+            }
         },
         "bonus_buy_1": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 269, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 270, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 298, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 299, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 274, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 275, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 303, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 304, 'C', 'D'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 274, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 276, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 303, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 305, 'C', 'D'),
                 }
             ],
         },
         "bonus_buy_2": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 269, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 271, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 298, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 300, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 278, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 279, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 307, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 308, 'C', 'D'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 278, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 280, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 307, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 309, 'C', 'D'),
                 }
             ],
         }
     },
 
     "mystery": {
-        "initial_reels_odds": [0, 50, 10, 10, 30, 30],
+        "next_reel": {
+            "values": [0, 1, 2, 3, 4, 5],
+            "weights": [0, 50, 10, 10, 30, 30]
+        },
 
         "paid": {
             "symbol": {
                 "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 100, 'C', 'L')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 124, 'C', 'L')
             },
             "num_reels": {
-                "values": [3, 4, 5, 6],
-                "weights": [10, 30, 28, 0]
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 116, 'C', 'F'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 117, 'C', 'F')
             },
-            "can_lose": {
-                "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'D')
+            "must_win": {
+                "values": [0, 1],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 130, 'C', 'D')
             },
             "reels_size": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 89, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 107, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 90, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 108, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 91, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 109, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 110, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 111, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 112, 'C', 'H'),
                 }
             ]
         },
@@ -362,40 +392,40 @@ game_settings_model = {
         "free": {
             "symbol": {
                 "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 101, 'C', 'L')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 125, 'C', 'L')
             },
             "num_reels": {
-                "values": [3, 4, 5, 6],
-                "weights": [40, 4, 0, 0]
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 116, 'C', 'F'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 118, 'C', 'F')
             },
-            "can_lose": {
-                "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'M')
+            "must_win": {
+                "values": [0, 1],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 130, 'L', 'M')
             },
             "reels_size": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 89, 'L', 'Q'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 107, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 90, 'L', 'Q'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 108, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 91, 'L', 'Q'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 109, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 92, 'L', 'Q'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 110, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 93, 'L', 'Q'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 111, 'L', 'Q'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 88, 'L', 'Q'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 94, 'L', 'Q'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 106, 'L', 'Q'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 112, 'L', 'Q'),
                 }
             ]
         },
@@ -412,14 +442,14 @@ game_settings_model = {
         "paid": {
             "can_lose": {
                 "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 114, 'C', 'D')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 140, 'C', 'D')
             }
         },
 
         "free": {
             "can_lose": {
                 "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 115, 'C', 'D')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 141, 'C', 'D')
             }
         },
     },
@@ -427,158 +457,150 @@ game_settings_model = {
     "queen_wild": {
         "paid": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 137, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 138, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 163, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 164, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 137, 'K', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 138, 'K', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 163, 'K', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 164, 'K', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 137, 'K', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 139, 'K', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 163, 'K', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 165, 'K', 'L'),
                 },
             ],
             "reels_size": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 143, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 144, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 170, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 145, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 171, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 146, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 172, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 147, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 142, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 148, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 174, 'C', 'H'),
                 }
             ],
             "place_gh": {
                 "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 125, 'C', 'D')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 151, 'C', 'D')
             },
             "gh_position": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 124, 'I', 'L'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 125, 'I', 'L')
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 150, 'I', 'L'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 151, 'I', 'L')
             },
             "gh_limit": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 129, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 130, 'C', 'E')
-            },
-            "qw_height": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 129, 'K', 'P'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 130, 'K', 'P')
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 155, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 156, 'C', 'E')
             },
         },
         "free": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 194, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 195, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'K', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'K', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 194, 'K', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 195, 'K', 'L'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 168, 'K', 'L'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 169, 'K', 'L'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 194, 'K', 'L'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 196, 'K', 'L'),
                 },
             ],
             "reels_size": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 174, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 199, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 200, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 175, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 199, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 201, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 176, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 199, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 202, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 177, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 199, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 203, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 178, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 199, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 204, 'C', 'H'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 173, 'C', 'H'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 179, 'C', 'H'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 199, 'C', 'H'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 205, 'C', 'H'),
                 }
             ],
             "place_gh": {
                 "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 156, 'C', 'D')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 182, 'C', 'D')
             },
             "gh_position": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 155, 'I', 'L'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 156, 'I', 'L')
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 181, 'I', 'L'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 182, 'I', 'L')
             },
             "gh_limit": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 160, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 161, 'C', 'E')
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 186, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 187, 'C', 'E')
             },
-            "qw_height": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 160, 'K', 'P'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 161, 'K', 'P')
-            }
         },
         "bonus_buy_1": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 296, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 297, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 325, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 326, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 302, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 303, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 331, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 332, 'C', 'D'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 302, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 304, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 331, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 333, 'C', 'D'),
                 }
             ],
             "place_gh": {
                 "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 286, 'C', 'D')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 315, 'C', 'D')
             },
         },
         "bonus_buy_2": {
             "reels_option": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 296, 'C', 'D'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 298, 'C', 'D'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 325, 'C', 'D'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 327, 'C', 'D'),
             },
             "tracker_option": [
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 306, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 307, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 335, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 336, 'C', 'D'),
                 },
                 {
-                    "values": utils_array.get_array_horizontal(game_settings_sheet, 306, 'C', 'D'),
-                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 308, 'C', 'D'),
+                    "values": utils_array.get_array_horizontal(game_settings_sheet, 335, 'C', 'D'),
+                    "weights": utils_array.get_array_horizontal(game_settings_sheet, 337, 'C', 'D'),
                 }
             ],
             "place_gh": {
                 "values": [1, 0],
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 287, 'C', 'D')
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 316, 'C', 'D')
             },
         }
     },
