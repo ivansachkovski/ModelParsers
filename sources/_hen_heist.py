@@ -1,12 +1,14 @@
 import openpyxl
 
+import sys
+
 import utils_array
 import utils_transform
 import parser_base
 
-skin_id = '200967'
-game_name = 'ngs_barnyard_bucks'
-model_path = '../../../math_models/Server_HenHeist_v3.1.xlsx'
+game_name = sys.argv[1]
+skin_id = sys.argv[2]
+model_path = sys.argv[3]
 
 wb = openpyxl.load_workbook(model_path, data_only=True)
 
@@ -45,13 +47,9 @@ game_settings_model = {
             "values": [0, 1, 2, 3, 4],
             "weights": [509, 250, 166, 55, 20]
         },
-        "golden_egg_paid": {
-            "values": [0, 1],
-            "weights": [99, 1]
-        },
         "golden_egg_respins": {
             "values": [0, 1],
-            "weights": [99, 1]
+            "weights": [2, 1]
         },
         "respins_losing_rows": {
             "values": ["1:0:0", "1:1:0"],
@@ -62,6 +60,12 @@ game_settings_model = {
         "game_modes": {
             "values": [0, 1, 2, 3],
             "weights": utils_array.get_array_vertical(server_sheet, 'C', 5)
+        },
+        "mod_wild_normal": {
+            "placements": {
+                "values": utils_array.get_array_vertical(server_sheet, 'E', 6, utils_transform.transform_remove_first),
+                "weights": utils_array.get_array_vertical(server_sheet, 'F', 6)
+            }
         },
         "mod_wild_multiplier": {
             "multipliers": {
@@ -99,6 +103,12 @@ game_settings_model = {
         "game_modes": {
             "values": [0, 1, 2, 3],
             "weights": utils_array.get_array_vertical(server_sheet, 'AO', 6)
+        },
+        "mod_wild_normal": {
+            "placements": {
+                "values": utils_array.get_array_vertical(server_sheet, 'AQ', 6, utils_transform.transform_remove_first),
+                "weights": utils_array.get_array_vertical(server_sheet, 'AR', 6)
+            }
         },
         "mod_wild_multiplier": {
             "multipliers": {
@@ -165,4 +175,5 @@ parser_base.create_strip_file('3_side_bet_paid.strip_set', server_strips_sheet, 
 parser_base.create_file('rs_scenarios.data', normal_bet_scenarios)
 parser_base.create_file('rs_scenarios_odds_normal_bet.data', utils_array.get_array_vertical(server_sheet, 'AL', 6))
 parser_base.create_file('rs_scenarios_odds_side_bet.data', utils_array.get_array_vertical(server_sheet, 'BX', 6))
-parser_base.create_file('rs_scenarios_odds_bonus_buy.data', utils_array.get_array_vertical(server_bonus_buy_sheet, 'T', 6))
+parser_base.create_file('rs_scenarios_odds_bonus_buy.data',
+                        utils_array.get_array_vertical(server_bonus_buy_sheet, 'T', 6))

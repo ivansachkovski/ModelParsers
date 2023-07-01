@@ -1,10 +1,14 @@
 import openpyxl
 
+import sys
+
 import utils_array
 import parser_base
 import utils_transform
 
-model_path = '../../../math_models/GimmeHoney_41_14.06.2023.xlsx'
+game_name = sys.argv[1]
+skin_id = sys.argv[2]
+model_path = sys.argv[3]
 
 wb = openpyxl.load_workbook(model_path, data_only=True)
 
@@ -609,7 +613,7 @@ game_settings_model = {
     "win_cap_total_bet_mult": 5000
 }
 
-parser_base.init('ngs_gimme_the_honey', '200993')
+parser_base.init(game_name, skin_id)
 
 parser_base.create_game_settings_file(game_settings_model)
 
