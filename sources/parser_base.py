@@ -40,7 +40,7 @@ def create_game_settings_file(model: dict):
     """
     path = prepare_out_directory_for_file('game_settings.json')
     with open(path, 'w') as f:
-        print(json.dumps(model, indent=4), file=f)
+        print(json.dumps(model, indent=4, allow_nan=False), file=f)
 
 
 def create_strip_file(file_name: str,

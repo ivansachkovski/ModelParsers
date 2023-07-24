@@ -61,3 +61,11 @@ def get_array_horizontal(sheet,
     range_end = col_name_end + str(row)
 
     return [item.value for item in sheet[range_begin:range_end][0]]
+
+
+def get_table(sheet,
+              start_row: int,
+              num_rows: int,
+              col_name_begin: str,
+              col_name_end: str):
+    return [get_array_horizontal(sheet, row, col_name_begin, col_name_end) for row in range(start_row, start_row + num_rows)]
