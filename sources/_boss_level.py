@@ -36,7 +36,43 @@ game_settings_model = {
     "fs_config": {
         "scatters_to_fs": [0, 0, 0, 8, 10, 12],
         "ranges": utils_array.get_table(game_settings_sheet, 313, 5, 'C', 'D'),
-        "new_power_block_reel": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'G'),
+        "new_power_block_reel": {
+            "values": utils_array.get_array_horizontal(game_settings_sheet, 167, 'C', 'G'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 168, 'C', 'G'),
+        }
+    },
+
+    "header_pos": {
+        "silver": {
+            "paid": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 102, 'C', 'G'),
+            },
+            "free": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 174, 'C', 'G'),
+            }
+        },
+        "gold": {
+            "paid": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 103, 'C', 'G'),
+            },
+            "free": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 175, 'C', 'G'),
+            }
+        },
+        "platinum": {
+            "paid": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 104, 'C', 'G'),
+            },
+            "free": {
+                "values": [0, 1, 2, 3, 4],
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 176, 'C', 'G'),
+            }
+        }
     },
 
     "reels_option": {
