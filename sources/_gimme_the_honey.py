@@ -2,7 +2,7 @@ import openpyxl
 
 import sys
 
-import utils_array
+from utils_array import *
 import parser_base
 import utils_transform
 
@@ -26,8 +26,8 @@ def create_table(
         num_rows: int = 0):
     def create_row(row: int):
         return {
-            "values": utils_array.get_array_horizontal(sheet, values_row, col_1, col_2) if values is None else values,
-            "weights": utils_array.get_array_horizontal(sheet, row, col_1, col_2)
+            "values": get_array_horizontal(sheet, values_row, col_1, col_2) if values is None else values,
+            "weights": get_array_horizontal(sheet, row, col_1, col_2)
         }
 
     assert first_weights_row > 0 and num_rows > 0
@@ -58,19 +58,6 @@ def create_table_2(
         for i in range(num_tables)]
 
 
-def create_obj(
-        sheet,
-        col_1: str,
-        col_2: str,
-        values_row: int = 0,
-        values=None,
-        weights_row: int = 0):
-    return {
-        "values": utils_array.get_array_horizontal(sheet, values_row, col_1, col_2) if values is None else values,
-        "weights": utils_array.get_array_horizontal(sheet, weights_row, col_1, col_2),
-    }
-
-
 game_settings_model = {
     "game": {
         "type": 2,
@@ -83,18 +70,8 @@ game_settings_model = {
         "fs_type": create_obj(gs_sheet, 'C', 'E', values_row=78, weights_row=79),
         "fs_special": create_table(gs_sheet, 'C', 'D', values=[1, 0], first_weights_row=313, num_rows=3),
 
-        "fs_special_qw_params": {
-            "first": {
-                "free": 1,
-                "bonus_buy_1": 1,
-                "bonus_buy_2": 1,
-            },
-            "interval": {
-                "free": 3,
-                "bonus_buy_1": 3,
-                "bonus_buy_2": 3,
-            }
-        },
+        "qw_param_first": [1, 1, 1],
+        "qw_param_interval": [300, 300, 300],
 
         "num_scatters": {
             "bonus_buy_1": create_obj(gs_sheet, 'H', 'K', values_row=328, weights_row=329),
@@ -194,12 +171,12 @@ game_settings_model = {
         "max_reels_size": [7, 6, 6, 6, 6, 7],
 
         "paid": {
-            "can_lose": create_obj(gs_sheet, 'C', 'D', values=[1, 0], weights_row=177),
+            "place_wild": create_obj(gs_sheet, 'C', 'D', values=[0, 1], weights_row=177),
             "reels_option": create_obj(gs_sheet, 'C', 'F', values_row=182, weights_row=183),
         },
 
         "free": {
-            "can_lose": create_obj(gs_sheet, 'C', 'D', values=[1, 0], weights_row=178),
+            "place_wild": create_obj(gs_sheet, 'C', 'D', values=[0, 1], weights_row=178),
             "reels_option": create_obj(gs_sheet, 'J', 'M', values_row=182, weights_row=183),
         },
     },

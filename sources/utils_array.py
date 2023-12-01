@@ -56,7 +56,6 @@ def get_array_horizontal(sheet,
                          row: int,
                          col_name_begin: str,
                          col_name_end: str):
-
     range_begin = col_name_begin + str(row)
     range_end = col_name_end + str(row)
 
@@ -68,4 +67,22 @@ def get_table(sheet,
               num_rows: int,
               col_name_begin: str,
               col_name_end: str):
-    return [get_array_horizontal(sheet, row, col_name_begin, col_name_end) for row in range(start_row, start_row + num_rows)]
+    return [get_array_horizontal(sheet, row, col_name_begin, col_name_end) for row in
+            range(start_row, start_row + num_rows)]
+
+
+def create_obj(
+        sheet,
+        col_1: str,
+        col_2: str,
+        weights_row: int,
+        values_row=None,
+        values=None):
+    values_array = get_array_horizontal(sheet, values_row, col_1, col_2) if values is None else values
+    weights_array = get_array_horizontal(sheet, weights_row, col_1, col_2)
+    assert len(values_array) == len(weights_array)
+
+    return {
+        "values": values_array,
+        "weights": weights_array,
+    }
