@@ -4,6 +4,7 @@ import utils_transform
 def get_array_vertical(sheet,
                        col_name: str,
                        start_row_index: int,
+                       end_row_index=None,
                        transform_func=None):
     """
     Get as array column `col_name` from `sheet` starting from `start_index_row`.
@@ -13,7 +14,10 @@ def get_array_vertical(sheet,
     start_row_index -= 1
 
     transform_func = transform_func or utils_transform.transform_none
-    column = sheet[col_name][start_row_index:]
+    if end_row_index is None:
+        column = sheet[col_name][start_row_index:]
+    else:
+        column = sheet[col_name][start_row_index:end_row_index]
 
     return [transform_func(cell.value) for cell in column if cell.value is not None]
 
