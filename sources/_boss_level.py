@@ -35,7 +35,8 @@ game_settings_model = {
 
     "fs_config": {
         "scatters_to_fs": [0, 0, 0, 8, 10, 12],
-        "ranges": utils_array.get_table(game_settings_sheet, 346, 5, 'C', 'D'),
+        "ranges": utils_array.get_table(game_settings_sheet, 357, 5, 'C', 'D'),
+        "levels": utils_array.get_array_horizontal(game_settings_sheet, 138, 'C', 'F'),
     },
 
     "header": {
@@ -45,49 +46,49 @@ game_settings_model = {
         },
         "free": {
             "values": [18, 19, 20],
-            "weights": utils_array.get_array_horizontal(game_settings_sheet, 204, 'C', 'E'),
+            "weights": utils_array.get_array_horizontal(game_settings_sheet, 215, 'C', 'E'),
         }
     },
 
     "reels_option": {
         "paid": utils_array.get_array_horizontal(game_settings_sheet, 45, 'C', 'G'),
-        "free": utils_array.get_array_horizontal(game_settings_sheet, 129, 'C', 'G'),
+        "free": utils_array.get_table(game_settings_sheet, 129, 5, 'C', 'G'),
     },
 
     "pos_reels": {
         "type": {
             "paid": utils_array.get_table(game_settings_sheet, 86, 5, 'C', 'G'),
-            "free": utils_array.get_table(game_settings_sheet, 170, 5, 'C', 'G'),
+            "free": utils_array.get_table(game_settings_sheet, 181, 5, 'C', 'G'),
         },
 
         "ranges": {
             "paid": get_pos_ranges_table(game_settings_sheet, 'C', 'D', 'F', 'G', start_row=49),
-            "free": get_pos_ranges_table(game_settings_sheet, 'C', 'D', 'F', 'G', start_row=133),
+            "free": get_pos_ranges_table(game_settings_sheet, 'C', 'D', 'F', 'G', start_row=144),
         }
     },
 
     "modifiers": {
         "mega_symbol": {
             "type": {
-                "paid": utils_array.get_table(game_settings_sheet, 221, 5, 'C', 'F'),
-                "free": utils_array.get_table(game_settings_sheet, 228, 5, 'C', 'F')
+                "paid": utils_array.get_table(game_settings_sheet, 232, 5, 'C', 'F'),
+                "free": utils_array.get_table(game_settings_sheet, 239, 5, 'C', 'F')
             },
             "max_symbol_type": [11, 11, 11],
             "symbol_weights": {
-                "paid": utils_array.get_array_horizontal(game_settings_sheet, 243, 'C', 'M'),
-                "free": utils_array.get_array_horizontal(game_settings_sheet, 244, 'C', 'M'),
+                "paid": utils_array.get_array_horizontal(game_settings_sheet, 254, 'C', 'M'),
+                "free": utils_array.get_array_horizontal(game_settings_sheet, 255, 'C', 'M'),
             },
-            "weight_s11_4x4": game_settings_sheet['D'][246].value,
+            "weight_s11_4x4": game_settings_sheet['D'][257].value,
         },
         "max_ways": {
             "type": {
-                "paid": utils_array.get_table(game_settings_sheet, 255, 5, 'C', 'D'),
-                "free": utils_array.get_table(game_settings_sheet, 262, 5, 'C', 'D')
+                "paid": utils_array.get_table(game_settings_sheet, 266, 5, 'C', 'D'),
+                "free": utils_array.get_table(game_settings_sheet, 273, 5, 'C', 'D')
             }
         },
         "power_block": {
             "type": {
-                "paid": utils_array.get_table(game_settings_sheet, 274, 5, 'C', 'F'),
+                "paid": utils_array.get_table(game_settings_sheet, 285, 5, 'C', 'F'),
             }
         },
     },
@@ -95,32 +96,32 @@ game_settings_model = {
     "power_block_multiplier": {
         "silver": {
             "paid": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 314, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 321, 'C', 'E'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 325, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 332, 'C', 'E'),
             },
             "free": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 314, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 326, 'C', 'E'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 325, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 337, 'C', 'E'),
             }
         },
         "gold": {
             "paid": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 315, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 322, 'C', 'E'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 326, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 333, 'C', 'E'),
             },
             "free": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 315, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 327, 'C', 'E'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 326, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 338, 'C', 'E'),
             }
         },
         "platinum": {
             "paid": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 316, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 323, 'C', 'E'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 327, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 334, 'C', 'E'),
             },
             "free": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 316, 'C', 'E'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 328, 'C', 'E'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 327, 'C', 'E'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 339, 'C', 'E'),
             }
         }
     },
@@ -128,11 +129,11 @@ game_settings_model = {
     "place_power_blocks": {
         "reel_lose": {
             "paid": utils_array.get_table(game_settings_sheet, 95, 5, 'C', 'D'),
-            "free": utils_array.get_table(game_settings_sheet, 179, 5, 'C', 'D'),
+            "free": utils_array.get_table(game_settings_sheet, 190, 5, 'C', 'D'),
         },
         "reel_win": {
             "paid": utils_array.get_table(game_settings_sheet, 104, 5, 'C', 'D'),
-            "free": utils_array.get_table(game_settings_sheet, 188, 5, 'C', 'D'),
+            "free": utils_array.get_table(game_settings_sheet, 199, 5, 'C', 'D'),
         },
         "row": {
             "paid": {
@@ -140,8 +141,8 @@ game_settings_model = {
                 "weights": utils_array.get_array_horizontal(game_settings_sheet, 113, 'C', 'L'),
             },
             "free": {
-                "values": utils_array.get_array_horizontal(game_settings_sheet, 196, 'C', 'L'),
-                "weights": utils_array.get_array_horizontal(game_settings_sheet, 197, 'C', 'L'),
+                "values": utils_array.get_array_horizontal(game_settings_sheet, 207, 'C', 'L'),
+                "weights": utils_array.get_array_horizontal(game_settings_sheet, 208, 'C', 'L'),
             }
         }
     },
