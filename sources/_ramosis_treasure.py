@@ -47,6 +47,68 @@ def create_all_strips_file(file_name):
             print(file=f)
 
 
+def get_array_row_by_row(sheet, cols: list, start_row: int, end_row):
+    return [int(sheet[col][row].value) for row in range(start_row - 1, end_row) for col in cols]
+
+
+def create_configuration(config):
+    bg_strip_sheet = wb['Reelstrip_' + config + '_BG']
+    bg_trigger_sheet = wb['Trigger_' + config + '_BG']
+    fg_settings_sheet = wb['Feature_' + config + '_Settings']
+
+    return {
+        "paid": {
+            "reel_strip": {
+                "reward": utils_array.get_array_vertical(bg_strip_sheet, 'B', 7)
+            },
+            "trigger": {
+                "events": utils_array.get_array_vertical(bg_trigger_sheet, 'B', 5),
+                "odds": get_array_row_by_row(bg_trigger_sheet, ['G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'], 5, 60)
+            }
+        },
+        "free": {
+            "feature1": {
+                "pos": {
+                    "values": utils_array.get_array_vertical(fg_settings_sheet, 'F', 14),
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'E', 14),
+                },
+                "mult": {
+                    "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 18, 21),
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 18, 21)
+                }
+            },
+            "feature2": {
+
+            },
+            "feature3": {
+                "reward": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 15, 20)
+            },
+            "feature12": {
+                "mult": {
+                    "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 25, 28),
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 25, 28)
+                }
+            },
+            "feature13": {
+                "mult": {
+                    "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 32, 35),
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 32, 35)
+                },
+                "reward": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 24, 29)
+            },
+            "feature23": {
+
+            },
+            "feature123": {
+                "mult": {
+                    "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 39, 42),
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 39, 42)
+                }
+            },
+        }
+    }
+
+
 game_settings_model = {
     "game": {
         "type": 2,
@@ -64,7 +126,11 @@ game_settings_model = {
                 3
             ],
             "weights": utils_array.get_array_horizontal(wb['First draw weights'], 6, 'B', 'E')
-        }
+        },
+        "LXF": create_configuration('LXF'),
+        "LYF": create_configuration('LYF'),
+        "HXF": create_configuration('HXF'),
+        "HYF": create_configuration('HYF'),
     }
 }
 
