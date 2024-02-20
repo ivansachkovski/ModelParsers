@@ -78,7 +78,13 @@ def create_configuration(config):
                 }
             },
             "feature2": {
-
+                "set": utils_array.get_array_vertical(fg_settings_sheet, 'H', 14, 16),
+                "prizes": [0, 1, 2, 3, 4, 5, 6],
+                "prize_odds": [
+                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 66, 85),
+                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 43, 62),
+                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 20, 39),
+                ]
             },
             "feature3": {
                 "reward": {
@@ -90,7 +96,14 @@ def create_configuration(config):
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 25, 28),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 25, 28)
-                }
+                },
+                "set": utils_array.get_array_vertical(fg_settings_sheet, 'R', 14, 16),
+                "prizes": [0, 1, 2, 3, 4, 5, 6],
+                "prize_odds": [
+                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 66, 85),
+                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 43, 62),
+                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 20, 39),
+                ]
             },
             "feature13": {
                 "mult": {
@@ -103,13 +116,32 @@ def create_configuration(config):
                 }
             },
             "feature23": {
-
+                "set": utils_array.get_array_vertical(fg_settings_sheet, 'AH', 14, 16),
+                "prizes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+                "prize_odds": [
+                    get_array_row_by_row(fg_settings_sheet,
+                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 66, 85),
+                    get_array_row_by_row(fg_settings_sheet,
+                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 43, 62),
+                    get_array_row_by_row(fg_settings_sheet,
+                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 20, 39),
+                ]
             },
             "feature123": {
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 39, 42),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 39, 42)
-                }
+                },
+                "set": utils_array.get_array_vertical(fg_settings_sheet, 'AU', 14, 16),
+                "prizes": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+                "prize_odds": [
+                    get_array_row_by_row(fg_settings_sheet,
+                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 66, 85),
+                    get_array_row_by_row(fg_settings_sheet,
+                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 43, 62),
+                    get_array_row_by_row(fg_settings_sheet,
+                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 20, 39),
+                ]
             },
         }
     }
