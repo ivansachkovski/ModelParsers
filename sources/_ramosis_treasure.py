@@ -47,8 +47,16 @@ def create_all_strips_file(file_name):
             print(file=f)
 
 
-def get_array_row_by_row(sheet, cols: list, start_row: int, end_row):
-    return [int(sheet[col][row].value) for row in range(start_row - 1, end_row) for col in cols]
+def get_array_row_by_row(sheet, cols: list, start_row: int, end_row: int):
+    if start_row <= end_row:
+        start_row -= 1
+        step = 1
+    else:
+        start_row -= 1
+        end_row -= 2
+        step = -1
+
+    return [int(sheet[col][row].value) for row in range(start_row, end_row, step) for col in cols]
 
 
 def create_configuration(config):
@@ -81,9 +89,9 @@ def create_configuration(config):
                 "set": utils_array.get_array_vertical(fg_settings_sheet, 'H', 14, 16),
                 "rewards": [0, 1, 2, 3, 4, 5, 6],
                 "reward_odds": [
-                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 66, 85),
-                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 43, 62),
-                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 20, 39),
+                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 85, 66),
+                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 62, 43),
+                    get_array_row_by_row(fg_settings_sheet, ['J', 'K', 'L', 'M', 'N', 'O', 'P'], 39, 20),
                 ]
             },
             "feature3": {
@@ -100,9 +108,9 @@ def create_configuration(config):
                 "set": utils_array.get_array_vertical(fg_settings_sheet, 'R', 14, 16),
                 "rewards": [0, 1, 2, 3, 4, 5, 6],
                 "reward_odds": [
-                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 66, 85),
-                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 43, 62),
-                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 20, 39),
+                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 85, 66),
+                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 62, 43),
+                    get_array_row_by_row(fg_settings_sheet, ['T', 'U', 'V', 'W', 'X', 'Y', 'Z'], 39, 20),
                 ]
             },
             "feature13": {
@@ -120,11 +128,11 @@ def create_configuration(config):
                 "rewards": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 "reward_odds": [
                     get_array_row_by_row(fg_settings_sheet,
-                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 66, 85),
+                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 85, 66),
                     get_array_row_by_row(fg_settings_sheet,
-                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 43, 62),
+                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 62, 43),
                     get_array_row_by_row(fg_settings_sheet,
-                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 20, 39),
+                                         ['AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS'], 39, 20),
                 ]
             },
             "feature123": {
@@ -136,11 +144,11 @@ def create_configuration(config):
                 "rewards": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 "reward_odds": [
                     get_array_row_by_row(fg_settings_sheet,
-                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 66, 85),
+                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 85, 66),
                     get_array_row_by_row(fg_settings_sheet,
-                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 43, 62),
+                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 62, 43),
                     get_array_row_by_row(fg_settings_sheet,
-                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 20, 39),
+                                         ['AW', 'AX', 'AY', 'AZ', 'BA', 'BB', 'BC', 'BD', 'BE', 'BF'], 39, 20),
                 ]
             },
         }
