@@ -81,7 +81,10 @@ def create_configuration(config):
 
             },
             "feature3": {
-                "reward": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 15, 20)
+                "reward": {
+                    "values": [7, 8, 9, 4, 5, 6],
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 15, 20)
+                }
             },
             "feature12": {
                 "mult": {
@@ -94,7 +97,10 @@ def create_configuration(config):
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 32, 35),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 32, 35)
                 },
-                "reward": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 24, 29)
+                "reward": {
+                    "values": [7, 8, 9, 4, 5, 6],
+                    "weights": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 24, 29)
+                }
             },
             "feature23": {
 
