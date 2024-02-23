@@ -62,6 +62,7 @@ def get_array_row_by_row(sheet, cols: list, start_row: int, end_row: int):
 def create_configuration(config):
     bg_strip_sheet = wb['Reelstrip_' + config + '_BG']
     bg_trigger_sheet = wb['Trigger_' + config + '_BG']
+    fg_trigger_sheet = wb['Trigger_' + config + '_FG']
     fg_settings_sheet = wb['Feature_' + config + '_Settings']
 
     return {
@@ -70,11 +71,16 @@ def create_configuration(config):
                 "reward": utils_array.get_array_vertical(bg_strip_sheet, 'B', 7)
             },
             "trigger": {
-                "events": utils_array.get_array_vertical(bg_trigger_sheet, 'B', 5),
                 "odds": get_array_row_by_row(bg_trigger_sheet, ['G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'], 5, 60)
             }
         },
         "free": {
+            "retrigger": {
+                "odds_1": get_array_row_by_row(fg_trigger_sheet, ['G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'], 5, 60),
+                "odds_3": get_array_row_by_row(fg_trigger_sheet, ['P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W'], 5, 60),
+                "odds_13": get_array_row_by_row(fg_trigger_sheet, ['Y', 'Z', 'AA', 'AB', 'AC', 'AD', 'AE', 'AF'], 5,
+                                                60),
+            },
             "feature1": {
                 "pos": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'F', 14),
@@ -163,6 +169,9 @@ game_settings_model = {
     },
     "bonus_buy_enabled": True,
     "path_settings_math": "/b2b-real-games/ngs/weights/201155/settings_math.json",
+    "common": {
+        "trigger_events": utils_array.get_array_vertical(wb['Trigger_LXF_BG'], 'B', 5),
+    },
     "normal_bet": {
         "config_type": {
             "values": [
