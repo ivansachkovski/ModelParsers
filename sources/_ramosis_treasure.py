@@ -221,18 +221,12 @@ game_settings_model = {
         "machine_id": 31289
     },
     "bonus_buy_enabled": True,
-    "path_settings_math": "/b2b-real-games/ngs/weights/201155/settings_math.json",
     "common": {
         "trigger_events": utils_array.get_array_vertical(wb['Trigger_LXF_BG'], 'B', 5),
     },
     "normal_bet": {
         "config_type": {
-            "values": [
-                0,
-                1,
-                2,
-                3
-            ],
+            "values": [0, 1, 2, 3],
             "weights": utils_array.get_array_horizontal(wb['First draw weights'], 6, 'B', 'E')
         },
         "LXF": create_configuration('LXF'),
