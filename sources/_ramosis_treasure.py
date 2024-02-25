@@ -10,7 +10,6 @@ skin_id = sys.argv[2]
 model_path = sys.argv[3]
 
 wb = openpyxl.load_workbook(model_path, data_only=True)
-game_configs = ['LXF', 'LYF', 'HXF', 'HYF']
 
 
 def create_all_strips_file(file_name):
@@ -26,7 +25,7 @@ def create_all_strips_file(file_name):
     num_rows = 58
     rows_offset = 7
 
-    sheets = [wb[mask.replace('$', config)] for config in game_configs for mask in sheets_with_strips]
+    sheets = [wb[mask.replace('$', config)] for config in ['LXF', 'LYF', 'HXF', 'HYF'] for mask in sheets_with_strips]
 
     # create all_strips
     all_strips = []
@@ -59,16 +58,35 @@ def get_array_row_by_row(sheet, cols: list, start_row: int, end_row: int):
     return [int(sheet[col][row].value) for row in range(start_row, end_row, step) for col in cols]
 
 
+def get_array_col_by_col(sheet, cols: list, start_row: int, end_row: int):
+    if start_row <= end_row:
+        start_row -= 1
+        step = 1
+    else:
+        start_row -= 1
+        end_row -= 2
+        step = -1
+
+    return [int(sheet[col][row].value) for col in cols for row in range(start_row, end_row, step)]
+
+
 def create_configuration(config):
     bg_strip_sheet = wb['Reelstrip_' + config + '_BG']
     bg_trigger_sheet = wb['Trigger_' + config + '_BG']
     fg_trigger_sheet = wb['Trigger_' + config + '_FG']
     fg_settings_sheet = wb['Feature_' + config + '_Settings']
 
+    pos_odds_list = ['T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ',
+                     'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ',
+                     'BA', 'BB', 'BC', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BK', 'BL', 'BM', 'BN', 'BO', 'BP',
+                     'BQ']
+    assert (len(pos_odds_list) == 5 * 10)
+
     return {
         "paid": {
             "reel_strip": {
-                "reward": utils_array.get_array_vertical(bg_strip_sheet, 'B', 7)
+                "reward": utils_array.get_array_vertical(bg_strip_sheet, 'B', 7),
+                "odds": get_array_col_by_col(bg_strip_sheet, pos_odds_list, 7, 528)
             },
             "trigger": {
                 "odds": get_array_row_by_row(bg_trigger_sheet, ['G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'], 5, 60)
@@ -83,7 +101,9 @@ def create_configuration(config):
             },
             "feature1": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_1'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_1'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_1'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_1'], pos_odds_list, 123, 180)
                 },
                 "pos": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'F', 14),
@@ -96,7 +116,9 @@ def create_configuration(config):
             },
             "feature2": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_2'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_2'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_2'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_2'], pos_odds_list, 123, 180)
                 },
                 "set": utils_array.get_array_vertical(fg_settings_sheet, 'H', 14, 16),
                 "rewards": [0, 1, 2, 3, 4, 5, 6],
@@ -108,7 +130,9 @@ def create_configuration(config):
             },
             "feature3": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_3'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_3'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_3'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_3'], pos_odds_list, 123, 180)
                 },
                 "reward": {
                     "values": [7, 8, 9, 4, 5, 6],
@@ -117,7 +141,9 @@ def create_configuration(config):
             },
             "feature12": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_12'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_12'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_12'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_12'], pos_odds_list, 123, 180)
                 },
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 25, 28),
@@ -133,7 +159,9 @@ def create_configuration(config):
             },
             "feature13": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_13'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_13'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_13'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_13'], pos_odds_list, 123, 180)
                 },
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 32, 35),
@@ -146,7 +174,9 @@ def create_configuration(config):
             },
             "feature23": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_23'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_23'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_23'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_23'], pos_odds_list, 123, 180)
                 },
                 "set": utils_array.get_array_vertical(fg_settings_sheet, 'AH', 14, 16),
                 "rewards": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -161,7 +191,9 @@ def create_configuration(config):
             },
             "feature123": {
                 "reel_strip": {
-                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_123'], 'B', 7)
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_123'], 'B', 7),
+                    "odds_normal": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_123'], pos_odds_list, 7, 64),
+                    "odds_super": get_array_col_by_col(wb['Reelstrip_' + config + '_FG_123'], pos_odds_list, 123, 180)
                 },
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 39, 42),
