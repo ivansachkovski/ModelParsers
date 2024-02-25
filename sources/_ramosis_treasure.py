@@ -82,6 +82,9 @@ def create_configuration(config):
                                                 60),
             },
             "feature1": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_1'], 'B', 7)
+                },
                 "pos": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'F', 14),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'E', 14),
@@ -92,6 +95,9 @@ def create_configuration(config):
                 }
             },
             "feature2": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_2'], 'B', 7)
+                },
                 "set": utils_array.get_array_vertical(fg_settings_sheet, 'H', 14, 16),
                 "rewards": [0, 1, 2, 3, 4, 5, 6],
                 "reward_odds": [
@@ -101,12 +107,18 @@ def create_configuration(config):
                 ]
             },
             "feature3": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_3'], 'B', 7)
+                },
                 "reward": {
                     "values": [7, 8, 9, 4, 5, 6],
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'AB', 15, 20)
                 }
             },
             "feature12": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_12'], 'B', 7)
+                },
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 25, 28),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 25, 28)
@@ -120,6 +132,9 @@ def create_configuration(config):
                 ]
             },
             "feature13": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_13'], 'B', 7)
+                },
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 32, 35),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 32, 35)
@@ -130,6 +145,9 @@ def create_configuration(config):
                 }
             },
             "feature23": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_23'], 'B', 7)
+                },
                 "set": utils_array.get_array_vertical(fg_settings_sheet, 'AH', 14, 16),
                 "rewards": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 "reward_odds": [
@@ -142,6 +160,9 @@ def create_configuration(config):
                 ]
             },
             "feature123": {
+                "reel_strip": {
+                    "reward": utils_array.get_array_vertical(wb['Reelstrip_' + config + '_FG_123'], 'B', 7)
+                },
                 "mult": {
                     "values": utils_array.get_array_vertical(fg_settings_sheet, 'C', 39, 42),
                     "weights": utils_array.get_array_vertical(fg_settings_sheet, 'B', 39, 42)
