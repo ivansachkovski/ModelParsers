@@ -233,6 +233,10 @@ game_settings_model = {
         "LYF": create_configuration('LYF'),
         "HXF": create_configuration('HXF'),
         "HYF": create_configuration('HYF'),
+    },
+    "bonus_buy": {
+        "game_mode_odds_1": [0, 200, 180, 230, 120, 115, 115, 40],
+        "game_mode_odds_2": [0, 0, 0, 0, 0, 0, 0, 1]
     }
 }
 
