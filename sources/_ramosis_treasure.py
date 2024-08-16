@@ -25,7 +25,7 @@ def create_all_strips_file(file_name):
     num_rows = 58
     rows_offset = 7
 
-    sheets = [wb[mask.replace('$', config)] for config in ['LXF', 'LYF', 'HXF', 'HYF'] for mask in sheets_with_strips]
+    sheets = [wb[mask.replace('$', config)] for config in ['LXF', 'HXF'] for mask in sheets_with_strips]
 
     # create all_strips
     all_strips = []
@@ -213,7 +213,7 @@ def create_configuration(config):
         }
     }
 
-
+'''
 game_settings_model = {
     "game": {
         "type": 2,
@@ -230,16 +230,18 @@ game_settings_model = {
             "weights": utils_array.get_array_horizontal(wb['First draw weights'], 6, 'B', 'E')
         },
         "LXF": create_configuration('LXF'),
-        "LYF": create_configuration('LYF'),
         "HXF": create_configuration('HXF'),
-        "HYF": create_configuration('HYF'),
     },
     "bonus_buy": {
-        "game_mode_odds_1": [0, 200, 180, 230, 120, 115, 115, 40],
-        "game_mode_odds_2": [0, 0, 0, 0, 0, 0, 0, 1]
+        "game_mode_odds_1": [0, 1815, 1900, 1900, 1300, 1250, 1235, 600],
+        "game_mode_odds_2": [0, 0, 0, 0, 0, 0, 0, 1],
+        "config_type_2": {
+            "values": [0, 1],
+            "weights": [53, 47]
+        }
     }
 }
-
+'''
 parser_base.init(game_name, skin_id)
-parser_base.create_game_settings_file(game_settings_model)
+#parser_base.create_game_settings_file(game_settings_model)
 create_all_strips_file('all_strips.strip_set')

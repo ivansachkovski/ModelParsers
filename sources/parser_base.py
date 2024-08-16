@@ -43,6 +43,15 @@ def create_game_settings_file(model: dict):
         print(json.dumps(model, indent=4, allow_nan=False), file=f)
 
 
+def create_game_config_file(model: dict):
+    """
+    Generate `game_config.json` according to `model`.
+    """
+    path = prepare_out_directory_for_file('game_config.json')
+    with open(path, 'w') as f:
+        print(json.dumps(model, indent=4, allow_nan=False), file=f)
+
+
 def create_strip_file(file_name: str,
                       sheet,
                       col_names: list,
